@@ -1,0 +1,8 @@
+Dependencies for Project 'GPIO', Target 'Target 1': (DO NOT MODIFY !)
+F (.\Startup.s)(0x46E638A6)(--cpu ARM7TDMI -g --apcs=interwork -I D:\keil\ARM\RV31\INC-I D:\keil\ARM\CMSIS\Include-I D:\keil\ARM\Inc\Philips--pd "__UVISION_VERSION SETA 514"--list .\startup.lst --xref -o .\startup.o --depend .\startup.d)
+F (.\LPC2138.H)(0x461355D4)()
+F (.\main.C)(0x60EE3385)(-c --cpu ARM7TDMI -g -O0 --apcs=interwork --asm --interleave --asm_dir ".\\"-I D:\keil\ARM\RV31\INC-I D:\keil\ARM\CMSIS\Include-I D:\keil\ARM\Inc\Philips-D__UVISION_VERSION="514"-o .\main.o --list_dir ".\\" --list --omf_browse .\main.crf --depend .\main.d)
+I (Config.h)(0x4DA32442)
+I (LPC2138.h)(0x461355D4)
+I (target.h)(0x405ADCE2)
+I (D:\keil\ARM\ARMCC\include\stdio.h)(0x5475F300)
