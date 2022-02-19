@@ -1,0 +1,4 @@
+C:\Users\10254\Desktop\Project2\Debug\Project2.exe
+C:\Users\10254\Desktop\Project2\Debug\Project2.pdb
+C:\Users\10254\Desktop\三子棋\Debug\Project2.exe
+C:\Users\10254\Desktop\三子棋\Debug\Project2.pdb
