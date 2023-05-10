@@ -4,6 +4,11 @@
 #include<time.h>
 #include <cassert>
 #include <thread>
+#ifdef _WIN32
+typedef size_t PAGE_ID;
+#elif _WIN64
+typedef unsigned long long	PAGE_ID;
+#endif
 static const size_t MAX_BYTES = 256 * 1024;
 static const size_t NFREELISTS = 208;
 static const size_t NPAGES = 129;
@@ -71,4 +76,10 @@ public:
 		assert(false);
 		return -1;
 	}
+};
+//管理内存页的跨度
+struct span
+{
+	size_t _pageid;
+
 };
