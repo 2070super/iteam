@@ -52,8 +52,8 @@ void Threadcache::deallocate(void* ptr, size_t size)
 	_freelists[index].push(ptr);
 }
 void* Threadcache::fetchfromcentralcache(size_t index, size_t size)
-{
-	return nullptr;
+{//慢开始反馈调节算法
+	
 }
 size_t sizeclass::_roundup(size_t size, size_t alignnum)
 {
