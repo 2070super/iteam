@@ -31,10 +31,14 @@ public:
 	bool Empty()
 	{
 		return _freelist == nullptr;
-
+	}
+	size_t& maxsize()
+	{
+		return _maxsize;
 	}
 private:
 	void* _freelist=nullptr;
+	size_t _maxsize = 1;
 };
 class sizeclass
 {
@@ -70,5 +74,22 @@ public:
 		}
 		assert(false);
 		return -1;
+	}
+	static size_t nummovesize(size_t size)
+	{
+		if (size == 0)
+			return 0;
+
+		// [2, 512]，一次批量移动多少个对象的(慢启动)上限值
+		// 小对象一次批量上限高
+		// 小对象一次批量上限低
+		int num = MAX_BYTES / size;
+		if (num < 2)
+			num = 2;
+
+		if (num > 512)
+			num = 512;
+
+		return num;
 	}
 };
