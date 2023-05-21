@@ -5,7 +5,9 @@
 class centralcache
 {
 public:
-	centralcache* getinstance();
+	static centralcache* getinstance();
+	// 从中心缓存是否有这么多给线程缓存
+	size_t FetchRangeObj(void*& start, void*& end, size_t n, size_t byte_size);
 private:
 	spanlist _spanlist[NFREELISTS];
 	static centralcache _sinst;

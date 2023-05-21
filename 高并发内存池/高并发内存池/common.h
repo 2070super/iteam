@@ -6,7 +6,7 @@
 #include <thread>
 #include<mutex>
 #ifdef _WIN64
-typedef unsigned long long	PAGE_ID;
+typedef      	PAGE_ID;
 #elif _WIN32
 typedef size_t PAGE_ID;
 #endif

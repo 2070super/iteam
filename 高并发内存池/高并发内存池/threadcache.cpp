@@ -52,7 +52,6 @@ void Threadcache::deallocate(void* ptr, size_t size)
 	_freelists[index].push(ptr);
 }
 void* Threadcache::fetchfromcentralcache(size_t index, size_t size)
-{
 /*慢开始算法
  1.第一次申请central cache不会给的太多，因为可能用不完。
  2.如果不断地申请，那么batchnum就会不断地增长，直到上限。
@@ -64,6 +63,15 @@ void* Threadcache::fetchfromcentralcache(size_t index, size_t size)
 	if (_freelists[index].maxsize() == batchnum)
 	{
 		_freelists[index].maxsize() += 1;
+	}
+	void* start = nullptr;
+	void* end = nullptr;
+	size_t actualnum=centralcache::getinstance()->FetchRangeObj(start,end,batchnum,size);
+	assert(actualnum > 1);
+	if (actualnum == 1)
+	{
+		assert(start == end);
+
 	}
 }
 size_t sizeclass::_roundup(size_t size, size_t alignnum)
